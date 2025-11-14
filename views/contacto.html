@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Hotel</title>
+<link rel="stylesheet" href="../styles/style.css">
+</head>
+<body>
+<header>
+   <div class="container">
+    <nav>
+    <img src="../resources/logo.png" alt="logo" style="width: 10%; height: 5%; position: relative; align-items: end;">
+      <a href="../index.html">Inicio</a>
+      <a href="habitaciones.html">Habitaciones</a>
+      <a href="servicios.html">Servicios</a>
+      <a href="galeria.html">Galería</a>
+      <a href="contacto.html">Contacto</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <h2>Contacto</h2>
+  <form id="contact-form">
+    <label>Nombre</label><input required>
+    <label>Correo</label><input type="email" required>
+    <label>Mensaje</label><textarea rows="4" required></textarea>
+    <button class="btn" type="submit">Enviar</button>
+  </form>
+  <div id="contact-msg" style="margin-top:10px"></div>
+</main>
+
+  <footer>
+    <p>&copy; 2025 Hotel Todos los derechos reservados.</p>
+  </footer>
+<script src="script.js"></script>
+</body>
+</html>

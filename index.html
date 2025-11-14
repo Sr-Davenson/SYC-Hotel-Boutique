@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8">
+  <link rel="icon" href="resources/icon.ico">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SYC Hotel Boutique</title>
+  <link rel="stylesheet" href="styles/styleIndex.css">
+  <meta name="description"
+    content="SYC Hotel Boutique: Lujo discreto en el corazón de la ciudad. Habitaciones con confort premium, desayuno incluido y atención 24/7. Reserva con el mejor precio garantizado.">
+  <meta name="keywords" content="hotel boutique, hotel en ciudad, reserva hotel, hotel con desayuno, hotel con jacuzzi">
+</head>
+
+<body>
+  <!-- Menú -->
+  <div class="menu">
+    <div class="imagen">
+      <a href="index.html">
+        <img src="resources/logo.png" alt="Logo SYC Hotel Boutique">
+      </a>
+    </div>
+    <div class="botonInicio">
+      <a href="index.html">Inicio</a>
+      <a href="views/habitaciones.html">Habitaciones</a>
+      <a href="views/servicios.html">Servicios</a>
+      <a href="views/galeria.html">Galería</a>
+      <a href="views/contacto.html">Contacto</a>
+    </div>
+  </div>
+
+  <!-- /* entrada 3:00 p.m
+  salida 11:00 a.m*/ -->
+
+  <br>
+
+  <main class="container">
+    <!-- Sección Bienvenido -->
+    <section class="card animated">
+      <h2>Bienvenido a SYC Hotel Boutique</h2>
+      <p>Descansa en el corazón de la ciudad, donde el lujo discreto y la calidez personal se encuentran. Cada detalle,
+        desde nuestro café de especialidad hasta nuestro staff que te recuerda tu nombre, está pensado para que tu
+        estancia sea más que un alojamiento: sea un recuerdo.</p>
+      <p><strong>Reserva hoy y disfruta de nuestra promesa: el mejor precio garantizado, sin cargos ocultos.</strong>
+      </p>
+      <a href="views/habitaciones.html" class="btn-cta">Explorar Habitaciones</a>
+      <br><br>
+      <h2>Reserva tu habitación</h2>
+    </section>
+    <br>
+    <!-- Sección ¿Por qué elegirnos? -->
+    <section class="card animated">
+      <h2>¿Por qué elegir SYC Hotel Boutique?</h2>
+      <div class="razones">
+        <div class="razon animated"><img src="resources/icon-ubicacion.png" alt="Ubicación"><img
+            src="resources/icon-ubicacion.png" alt="Ubicación">
+          <h3>Ubicación privilegiada</h3>
+          <p>A solo 2 minutos a pie del centro histórico, tiendas de diseño y los mejores restaurantes de la ciudad.</p>
+        </div>
+        <div class="razon animated"><img src="resources/icon-confort.png" alt="Confort">
+          <h3>Confort personalizado</h3>
+          <p>Camas de alta densidad, ropa de cama de algodón egipcio y ambientación con aromaterapia.</p>
+        </div>
+        <div class="razon animated"><img src="resources/icon-servicio.png" alt="Servicio">
+          <h3>Atención 24/7</h3>
+          <p>Nuestro equipo te recibe como un invitado, no como un cliente. Tu comodidad es nuestra prioridad.</p>
+        </div>
+        <div class="razon animated"><img src="resources/icon-sostenible.png" alt="Sostenible">
+          <h3>Compromiso sostenible</h3>
+          <p>Usamos productos ecológicos, reducimos plásticos y apoyamos a productores locales.</p>
+        </div>
+      </div>
+    </section>
+    <br>
+    <br>
+    <br>
+
+
+    <!-- Sección Galería -->
+    <section class="card">
+      <h2>Descubre nuestro hotel</h2>
+      <p>Una mirada íntima a los espacios que te recibirán con calidez y estilo.</p>
+
+      <div class="carousel-container">
+        <button class="carousel-btn prev" onclick="prevImage()">&#10094;</button>
+
+        <div class="carousel">
+          <img src="resources/hab1 (1).webp" alt="Habitación Doble con vista" class="carousel-image active"
+            loading="lazy">
+          <img src="resources/hab1 (2).webp" alt="Suite con jacuzzi" class="carousel-image" loading="lazy">
+          <img src="resources/hab1 (3).webp" alt="Café boutique" class="carousel-image" loading="lazy">
+          <img src="resources/habitacion 2.jpg" alt="Piscina en terraza" class="carousel-image" loading="lazy">
+          <img src="resources/hab1 (1).webp" alt="Lobby acogedor" class="carousel-image" loading="lazy">
+          <img src="resources/hab1 (1).webp" alt="Espacio para eventos" class="carousel-image"
+            loading="lazy">
+        </div>
+
+        <button class="carousel-btn next" onclick="nextImage()">&#10095;</button>
+      </div>
+
+      <!-- Indicadores de puntos -->
+      <div class="carousel-dots" id="carouselDots"></div>
+    </section>
+
+
+
+
+    <br>
+
+    <!-- Sección Experiencias -->
+    <section class="card animated">
+      <h2>Experiencias exclusivas</h2>
+      <p>Descubre lo que hace única tu estancia en SYC.</p>
+      <div class="experiencias">
+        <div class="experiencia animated">
+
+          <h3>Desayuno al amanecer</h3>
+          <p>Disfruta de un desayuno gourmet en la terraza con vistas al amanecer, acompañado de café de origen local
+            y
+            pan artesanal.</p>
+        </div>
+        <div class="experiencia animated">
+          <h3>Tour privado de la ciudad</h3>
+          <p>Reserva un paseo guiado en auto clásico por los barrios más encantadores, con un historiador local.</p>
+        </div>
+        <div class="experiencia animated">>
+          <h3>Spa en la habitación</h3>
+          <p>Relájate con un masaje de 60 minutos en tu cuarto, con aceites esenciales y música relajante.</p>
+        </div>
+      </div>
+    </section>
+
+    <br>
+
+    <!-- Mapa de ubicación -->
+    <section class="card animated">
+      <h2>Ubicación</h2>
+        <div class="embed-map-fixed"><div class="embed-map-container"><iframe class="embed-map-frame" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=600&height=400&hl=en&q=syc%20hotel%20boutique&t=&z=18&ie=UTF8&iwloc=B&output=embed"></iframe><a href="https://sprunkiretake.net" style="font-size:2px!important;color:gray!important;position:absolute;bottom:0;left:0;z-index:1;max-height:1px;overflow:hidden">sprunki retake</a></div><style>.embed-map-fixed{position:relative;text-align:right;width:600px;height:400px;}.embed-map-container{overflow:hidden;background:none!important;width:600px;height:400px;}.embed-map-frame{width:600px!important;height:400px!important;}</style></div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Pie de página -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>SYC Hotel Boutique</h3>
+        <p>Donde la elegancia se encuentra con la calidez.</p>
+      </div>
+      <div class="footer-section">
+        <h3>Contacto</h3>
+        <p>📍 Calle 15 #1 - 05, Arauca</p>
+        <p>📞 +57 323 2356766</p>
+        <p>✉️ sychoteles@gmail.com</p>
+      </div>
+      <div class="footer-section">
+        <h3>Horarios</h3>
+        <p>Check-in: 15:00 hrs</p>
+        <p>Check-out: 11:00 hrs</p>
+        <p>Recepción: 24/7</p>
+      </div>
+    </div>
+    <p>&copy; 2025 SYC Hotel Boutique. Todos los derechos reservados.</p>
+  </footer>
+
+  <!-- Botón flotante de WhatsApp -->
+  <a href="https://wa.me/+573232356766" target="_blank" class="boton-whatsapp"><i class="fab fa-whatsapp"></i></a>
+  <script src="Js/scriptIndex.js"></script>
+</body>
+
+</html>
