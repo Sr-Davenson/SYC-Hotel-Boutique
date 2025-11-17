@@ -116,13 +116,3 @@ window.addEventListener('load', startAutoSlide);
 // Opcional: Pausar al pasar el mouse encima del carrusel
 document.querySelector('.carousel-container')?.addEventListener('mouseenter', stopAutoSlide);
 document.querySelector('.carousel-container')?.addEventListener('mouseleave', startAutoSlide);
-
-function openMapsLocation() {
-  // Coordenadas exactas de tu hotel (reemplaza con las tuyas)
-  const latitude = 7.081013474496727;
-  const longitude = -70.75708195146947;
-  
-  // URL para "Cómo llegar" usando coordenadas
-  const mapsUrl = `https://www.google.com/maps/dir/?api=1&destination=${latitude},${longitude}`;
-  window.open(mapsUrl, '_blank');
-}
