@@ -116,3 +116,4 @@ window.addEventListener('load', startAutoSlide);
 // Opcional: Pausar al pasar el mouse encima del carrusel
 document.querySelector('.carousel-container')?.addEventListener('mouseenter', stopAutoSlide);
 document.querySelector('.carousel-container')?.addEventListener('mouseleave', startAutoSlide);
+

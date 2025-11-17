@@ -4,8 +4,6 @@
   margin: 0;
   padding: 0;
   font-family: 'Poppins', sans-serif;
-  -webkit-user-drag: none;
-  
 }
 
 body {
@@ -117,68 +115,6 @@ h2 {
 }
 
 
-
-/* ====== Cuadros de Habitaciones ====== */
-.habitaciones-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 25px;
-  margin-top: 30px;
-  max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 0 20px;
-}
-
-
-.habitacion {
-  background-color: #ffffff;
-  border: 2px solid #C8B273;
-  border-radius: 15px;
-  padding: 15px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
-  text-align: center;
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.habitacion:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-}
-
-.habitacion img {
-  width: 100%;
-  height: 200px;
-  border-radius: 10px;
-  object-fit: cover;
-}
-
-.habitacion h3 {
-  margin: 10px 0;
-  color: #000000;
-}
-
-.habitacion p {
-  color: #333333;
-  margin-bottom: 10px;
-}
-
-.habitacion button {
-  background-color: #C8B273;
-  color: #000000;
-  border: none;
-  padding: 8px 14px;
-  border-radius: 6px;
-  cursor: pointer;
-  font-weight: 600;
-  transition: background 0.3s;
-}
-
-.habitacion button:hover {
-  background-color: #000000;
-  color: #C8B273;
-}
-
 /* ====== Pie de página ====== */
 footer {
   background-color: #000000;
@@ -244,24 +180,25 @@ footer {
   color: #ffffff;
 }
 
-/* Ajuste para pantallas medianas (tabletas) */
-@media (max-width: 1024px) {
-  .habitaciones-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
+/* ====== Mapa ====== */
+.embed-map-fixed {
+  position: relative;
+  text-align: right;
+  width: 100%;
+  height: 400px;
+  margin: 0 auto;
+  max-width: 600px;
 }
 
-/* Ajuste para móviles */
-@media (max-width: 600px) {
-  .habitaciones-grid {
-    grid-template-columns: 1fr; /* 1 columna */
-  }
-}
-footer img {
-  width: 80%;
-  height: 300%;
-  transition-property: background-color, box-shadow;
-  transition: transform 0.3s ease-in-out, filter 0.3s ease;
-  animation: animacionSuperior 1.1s ease-in-out;
+.embed-map-container {
+  overflow: hidden;
+  background: none !important;
+  width: 100%;
+  height: 100%;
 }
 
+.embed-map-frame {
+  width: 100% !important;
+  height: 100% !important;
+  border: none;
+}
