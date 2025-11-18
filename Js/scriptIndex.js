@@ -103,7 +103,7 @@ let autoSlideInterval;
 function startAutoSlide() {
   autoSlideInterval = setInterval(() => {
     nextImage();
-  }, 4000); // Cambia cada 5 segundos (5000 ms)
+  }, 5000); // Cambia cada 5 segundos (5000 ms)
 }
 
 function stopAutoSlide() {
