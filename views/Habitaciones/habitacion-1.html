@@ -35,39 +35,70 @@
     <section class="card animated">
 
       <h2>Habitación Doble</h2>
+ <p>Disfruta de nuestra habitación con una cama doble, balcón con vista a la ciudad y servicio a la habitación,
+          equipada con aire acondicionado, WiFi gratis y TV de pantalla plana, Para quienes necesiten trabajar, la
+          habitación incorpora un escritorio y un ambiente tranquilo. El baño privado incluye ducha, artículos de aseo
+          gratuitos y secador de pelo. Con detalles pensados para tu bienestar, como detector de monóxido de carbono y
+          desinfectante de manos, esta habitación combina comodidad y estilo para una estancia perfecta.</p>
 
-      <p>Disfruta de nuestra habitación con una cama doble, balcón con vista a la ciudad y servicio a la habitación, equipada con aire acondicionado, WiFi gratis y TV de pantalla plana, Para quienes necesiten trabajar, la habitación incorpora un escritorio y un ambiente tranquilo.  El baño privado incluye ducha, artículos de aseo gratuitos y secador de pelo. Con detalles pensados para tu bienestar, como detector de monóxido de carbono y desinfectante de manos, esta habitación combina comodidad y estilo para una estancia perfecta.</p>
+        <!-- Contenedor principal -->
+        <div class="detalle-layout">
+          <!-- Carrusel a la izquierda -->
+          <div class="carrusel-column">
+            <div class="carousel-container">
+              <button class="carousel-btn prev" onclick="prevImage()">&#10094;</button>
 
-      <div class="carousel-container">
-        <button class="carousel-btn prev" onclick="prevImage()">&#10094;</button>
+              <div class="carousel">
+                <img src="../../resources/1.jpg" alt="lobby1" class="carousel-image active" loading="lazy">
+                <img src="../../resources/2.jpg" alt="lobby2" class="carousel-image" loading="lazy">
+                <img src="../../resources/3.jpg" alt="lobby3" class="carousel-image" loading="lazy">
+                <img src="../../resources/4.jpg" alt="lobby4" class="carousel-image" loading="lazy">
+                <img src="../../resources/5.jpg" alt="lobby5" class="carousel-image" loading="lazy">
+                <img src="../../resources/6.jpg" alt="lobby6" class="carousel-image" loading="lazy">
+              </div>
 
-        <div class="carousel">
-          <img src="../../resources/1.jpg" alt="lobby1" class="carousel-image active" loading="lazy">
-          <img src="../../resources/2.jpg" alt="lobby2" class="carousel-image" loading="lazy">
-          <img src="../../resources/3.jpg" alt="lobby3" class="carousel-image" loading="lazy">
-          <img src="../../resources/4.jpg" alt="lobby4" class="carousel-image" loading="lazy">
-          <img src="../../resources/5.jpg" alt="lobby5" class="carousel-image" loading="lazy">
-          <img src="../../resources/6.jpg" alt="lobby6" class="carousel-image" loading="lazy">
+              <button class="carousel-btn next" onclick="nextImage()">&#10095;</button>
+            </div>
+
+            <!-- Indicadores de puntos -->
+            <div class="carousel-dots" id="carouselDots"></div>
+          </div>
+
+          <!-- Columna derecha con formulario y lista -->
+          <div class="form-list-column">
+            <form class="formReserva" data-habitacion="Doble">
+              <h3>Reserva tu habitación</h3>
+              <label>Fecha de entrada:</label>
+              <input type="date" id="entrada-doble" required>
+
+              <label>Fecha de salida:</label>
+              <input type="date" id="salida-doble" required>
+
+              <button type="submit" class="btn-cta">Reservar por WhatsApp</button>
+            </form>
+
+            <!-- Lista de servicios -->
+            <div class="habitacion-servicios">
+              <h3>Incluye</h3>
+              <ul>
+                <li>✅ Cama doble</li>
+                <li>✅ Balcón con vista a la ciudad</li>
+                <li>✅ Servicio a la habitación</li>
+                <li>✅ Aire acondicionado</li>
+                <li>✅ WiFi gratis</li>
+                <li>✅ TV de pantalla plana</li>
+                <li>✅ Escritorio</li>
+                <li>✅ Baño privado con ducha</li>
+                <li>✅ Artículos de aseo gratuitos</li>
+                <li>✅ Secador de pelo</li>
+                <li>✅ Detector de monóxido de carbono</li>
+                <li>✅ Desinfectante de manos</li>
+              </ul>
+            </div>
+          </div>
         </div>
-
-        <button class="carousel-btn next" onclick="nextImage()">&#10095;</button>
-      </div>
-
-      <!-- Indicadores de puntos -->
-      <div class="carousel-dots" id="carouselDots"></div>
-    </section>
-
-    <form class="formReserva" data-habitacion="Individual">
-      <label>Fecha de entrada:</label>
-      <input type="date" id="entrada-ind" required>
-
-      <label>Fecha de salida:</label>
-      <input type="date" id="salida-ind" required>
-
-      <button type="submit">Reservar por WhatsApp</button>
-    </form>
-  </main>
-
+      </section>
+    </main>
   <!-- Pie de página -->
   <footer>
     <div class="footer-content">

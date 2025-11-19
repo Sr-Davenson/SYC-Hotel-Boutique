@@ -12,32 +12,9 @@ body {
 }
 
 /* ====== Encabezado ====== */
-header {
-  background-color: #000000;
-  color: #C8B273;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px 40px;
-  flex-wrap: wrap;
-}
-
-nav a {
-  color: #C8B273;
-  text-decoration: none;
-  margin: 0 15px;
-  font-weight: 500;
-  transition: color 0.3s;
-}
-
-nav a:hover,
-nav a.active {
-  color: #ffffff;
-}
-
 .menu {
   background-color: #000000;
-  width: 99vw;
+  width: 98.8vw;
   height: 15vh;
   display: flex;
   align-items: center;
@@ -103,10 +80,14 @@ nav a.active {
 /* ====== Secciones principales ====== */
 main {
   padding: 30px 40px;
-  text-align: center;
 }
 
-h2 {
+.card {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.card h2 {
   color: #000000;
   border-bottom: 3px solid #C8B273;
   display: inline-block;
@@ -114,6 +95,136 @@ h2 {
   padding-bottom: 5px;
 }
 
+.card p {
+  color: #333;
+  font-size: 1.1em;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* ====== Grid de Servicios ====== */
+.servicios-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  margin: 40px 0;
+}
+
+.servicio {
+  background-color: #ffffff;
+  border: 2px solid #C8B273;
+  border-radius: 15px;
+  padding: 25px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  cursor: default;
+}
+
+.servicio i {
+  font-size: 40px;
+  color: #C8B273;
+  margin-bottom: 15px;
+}
+
+.servicio h3 {
+  color: #000000;
+  margin-bottom: 12px;
+}
+
+.servicio p {
+  color: #555;
+  line-height: 1.6;
+}
+
+.servicio:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+/* ====== Experiencias ====== */
+.experiencias-list {
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+}
+
+.experiencia {
+  background-color: #f9f7f2;
+  border: 1px solid #C8B273;
+  border-radius: 12px;
+  padding: 20px;
+  text-align: left;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+}
+
+.experiencia h4 {
+  color: #000000;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #C8B273;
+  padding-bottom: 5px;
+}
+
+.experiencia p {
+  color: #555;
+  line-height: 1.6;
+}
+
+@keyframes fadeInUpWithLift {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(-5px); 
+  }
+}
+.animated {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.animated.visible {
+  opacity: 1;
+  transform: translateY(-5px); /* Elevación final al aparecer */
+}
+
+
+/* Opcional: para las experiencias */
+.experiencia {
+  opacity: 1;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.experiencia.visible {
+  opacity: 1;
+  transform: translateY(-5px);
+}
+
+
+/* ====== Elevación al hacer hover ====== */
+
+.servicio {
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.servicio:hover {
+  transform: translateY(-25px); /* Elevación adicional al hacer hover */
+  box-shadow: 0 12px 25px rgba(0,0,0,0.18);
+}
+
+.experiencia {
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.experiencia:hover {
+  transform: translateY(-8px); /* Elevación adicional al hacer hover */
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
 
 /* ====== Pie de página ====== */
 footer {
@@ -180,25 +291,36 @@ footer {
   color: #ffffff;
 }
 
-/* ====== Mapa ====== */
-.embed-map-fixed {
-  position: relative;
-  text-align: right;
-  width: 100%;
-  height: 400px;
-  margin: 0 auto;
-  max-width: 600px;
+/* ====== Animación de entrada ====== */
+@keyframes animacionSuperior {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-.embed-map-container {
-  overflow: hidden;
-  background: none !important;
-  width: 100%;
-  height: 100%;
+/* Ajuste para pantallas medianas (tabletas) */
+@media (max-width: 1024px) {
+  .habitaciones-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
-.embed-map-frame {
-  width: 100% !important;
-  height: 100% !important;
-  border: none;
+/* Ajuste para móviles */
+@media (max-width: 600px) {
+  .habitaciones-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+footer img {
+  width: 80%;
+  height: 300%;
+  transition-property: background-color, box-shadow;
+  transition: transform 0.3s ease-in-out, filter 0.3s ease;
+  animation: animacionSuperior 1.1s ease-in-out;
 }

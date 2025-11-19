@@ -228,6 +228,74 @@ h2 {
   right: 15px;
 }
 
+.detalle-layout {
+  display: flex;
+  gap: 30px;
+  margin-top: 20px;
+  align-items: flex-start;
+}
+
+.carrusel-column {
+  flex: 1;
+  min-width: 400px;
+}
+
+.form-list-column {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  flex: 0.8;
+  min-width: 350px;
+}
+
+.formReserva {
+  background-color: #ffffff;
+  border: 2px solid #C8B273;
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.habitacion-servicios {
+  background-color: #ffffff;
+  border: 2px solid #C8B273;
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.formReserva h3,
+.habitacion-servicios h3 {
+  color: #000000;
+  border-bottom: 2px solid #C8B273;
+  padding-bottom: 5px;
+  margin-bottom: 15px;
+}
+
+.habitacion-servicios ul {
+  list-style: none;
+  padding: 0;
+}
+
+.habitacion-servicios li {
+  padding: 5px 0;
+  color: #333333;
+  text-align: left;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .detalle-layout {
+    flex-direction: column;
+  }
+
+  .carrusel-column,
+  .form-list-column {
+    min-width: 100%;
+  }
+}
+
+
   /* ====== Botón flotante WhatsApp ====== */
 .boton-whatsapp {
   position: fixed;

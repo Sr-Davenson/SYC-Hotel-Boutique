@@ -1,59 +1,3 @@
-document.addEventListener('DOMContentLoaded', function () {
-  // === Validación de fechas y WhatsApp (como antes) ===
-  const today = new Date().toISOString().split('T')[0];
-  document.getElementById('fechaEntrada').min = today;
-  document.getElementById('fechaSalida').min = today;
-
-  document.getElementById('formReserva').addEventListener('submit', function (e) {
-    const entrada = new Date(document.getElementById('fechaEntrada').value);
-    const salida = new Date(document.getElementById('fechaSalida').value);
-    if (entrada >= salida) {
-      e.preventDefault();
-      alert('La fecha de salida debe ser posterior a la de entrada.');
-    }
-  });
-
-  document.getElementById('btnWhatsApp').addEventListener('click', function (e) {
-    e.preventDefault();
-
-    const habitacion = document.getElementById('habitacion').value;
-    const entrada = document.getElementById('fechaEntrada').value;
-    const salida = document.getElementById('fechaSalida').value;
-    const huéspedes = document.getElementById('huéspedes').value;
-
-    if (!habitacion || !entrada || !salida || !huéspedes) {
-      alert('Por favor, completa todos los campos.');
-      return;
-    }
-
-    const mensaje = `Hola, quiero reservar una habitación ${habitacion} para ${huéspedes} huéspedes.\nEntrada: ${entrada}\nSalida: ${salida}\n\n¿Disponible?`;
-    const numero = "+573232356766"; // Cambia por tu número real
-    const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensaje)}`;
-    window.open(url, '_blank');
-  });
-
-  // === Animaciones al hacer scroll ===
-  const animatedElements = document.querySelectorAll('.animated');
-
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.style.opacity = 1;
-          entry.target.style.transform = 'translateY(0)';
-        }
-      });
-    },
-    { threshold: 0.1 } // Animar cuando el 10% del elemento es visible
-  );
-
-  animatedElements.forEach((el) => {
-    el.style.opacity = 0;
-    el.style.transform = 'translateY(30px)';
-    el.style.transition = 'opacity 0.8s ease-out, transform 0.8s ease-out';
-    observer.observe(el);
-  });
-});
 let currentImageIndex = 0;
 const images = document.querySelectorAll('.carousel-image');
 const dotsContainer = document.getElementById('carouselDots');
@@ -103,7 +47,7 @@ let autoSlideInterval;
 function startAutoSlide() {
   autoSlideInterval = setInterval(() => {
     nextImage();
-  }, 4000); // Cambia cada 5 segundos (5000 ms)
+  }, 5000); // Cambia cada 5 segundos (5000 ms)
 }
 
 function stopAutoSlide() {
@@ -116,3 +60,85 @@ window.addEventListener('load', startAutoSlide);
 // Opcional: Pausar al pasar el mouse encima del carrusel
 document.querySelector('.carousel-container')?.addEventListener('mouseenter', stopAutoSlide);
 document.querySelector('.carousel-container')?.addEventListener('mouseleave', startAutoSlide);
+
+// === Animaciones al hacer scroll ===
+const animatedElements = document.querySelectorAll('.animated');
+
+const observer = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = 1;
+        entry.target.style.transform = 'translateY(0)';
+      }
+    });
+  },
+  { threshold: 0.1 }
+);
+
+animatedElements.forEach((el) => {
+  el.style.opacity = 0;
+  el.style.transform = 'translateY(30px)';
+  el.style.transition = 'opacity 0.8s ease-out, transform 0.8s ease-out';
+  observer.observe(el);
+});
+
+// === Formulario de Reserva ===
+document.addEventListener('DOMContentLoaded', function () {
+  const today = new Date().toISOString().split('T')[0];
+  const entradaInput = document.getElementById('entrada-doble');
+  const salidaInput = document.getElementById('salida-doble');
+
+  if (entradaInput && salidaInput) {
+    entradaInput.min = today;
+    salidaInput.min = today;
+
+    // Validar que la salida sea posterior a la entrada
+    entradaInput.addEventListener('change', function () {
+      salidaInput.min = entradaInput.value;
+    });
+
+    // Manejo del formulario
+    const form = document.querySelector('.formReserva');
+    const tipoHabitacion = form.getAttribute('data-habitacion');
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      const entrada = document.getElementById('entrada-doble').value;
+      const salida = document.getElementById('salida-doble').value;
+
+      if (!entrada || !salida) {
+        alert('Por favor, completa todas las fechas.');
+        return;
+      }
+
+      const entradaDate = new Date(entrada);
+      const salidaDate = new Date(salida);
+
+      if (entradaDate >= salidaDate) {
+        alert('La fecha de salida debe ser posterior a la de entrada.');
+        return;
+      }
+
+      // Generar mensaje de WhatsApp
+      // Formatear fecha a dd/mm/aaaa
+function formatDate(dateString) {
+  const [year, month, day] = dateString.split('-');
+  return `${day}/${month}/${year}`;
+}
+
+// Generar mensaje de WhatsApp
+const entradaFormateada = formatDate(entrada);
+const salidaFormateada = formatDate(salida);
+
+const mensaje = `Hola, quiero reservar una habitación ${tipoHabitacion}.\nEntrada: ${entradaFormateada}\nSalida: ${salidaFormateada}\n\n¿Está disponible?`;
+
+      const numero = "+573232356766"; // Tu número de WhatsApp
+      const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensaje)}`;
+
+      // Abrir WhatsApp
+      window.open(url, '_blank');
+    });
+  }
+});
