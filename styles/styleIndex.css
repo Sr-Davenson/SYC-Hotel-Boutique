@@ -61,7 +61,6 @@ nav a.active {
 }
 
 .menu img:hover {
-  transform: scale(1.1);
   filter: brightness(1.2) contrast(1.1);
 }
 
@@ -97,7 +96,6 @@ nav a.active {
   color: #fff;
   transition: all 0.3s;
   transform: translateY(-3px);
-
 }
 
 .botonInicio a:active {
