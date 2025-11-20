@@ -161,7 +161,7 @@ body {
     position: fixed; /* Cambia a fixed en móvil */
     top: 0;
     width: 100vw;
-    height: 10vh;
+    height: 15vh;
     min-height: 60px;
     border-bottom-right-radius: 100px;
     border-bottom-left-radius: 100px;
@@ -170,7 +170,7 @@ body {
 
   .menu img {
     margin-left: 10%;
-    width: 27%;
+    width: 25%;
     height: auto;
   }
 
