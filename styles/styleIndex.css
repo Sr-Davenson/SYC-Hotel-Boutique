@@ -150,6 +150,7 @@ nav a.active {
   border-bottom-left-radius: 20px;
 }
 
+
 .mobile-menu.open {
   transform: translateX(0); /* Se despliega */
 }
@@ -208,7 +209,7 @@ nav a.active {
 
 @media (max-width: 480px) {
   .menu img {
-    width: 40%;
+    width: 35%;
   }
 
   .mobile-menu {
@@ -220,9 +221,6 @@ nav a.active {
     padding: 12px;
   }
 }
-
-
-
 
 
 /* ====== Secciones principales ====== */
