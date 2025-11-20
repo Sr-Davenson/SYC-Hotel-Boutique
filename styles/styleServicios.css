@@ -152,7 +152,7 @@ body {
 
 @media (max-width: 768px) {
   .desktop-menu {
-    display: none; /* Ocultar en móvil */
+    display: none; 
   }
 
   .hamburger-menu {
@@ -171,29 +171,14 @@ body {
   }
 
   .menu img {
-    margin-left: 11%;
-    width: 30%;
+    margin-left: 10%;
+    width: 27%;
     height: auto;
   }
 
   .botonInicio {
     width: auto;
     margin-right: 15%;
-  }
-}
-
-@media (max-width: 480px) {
-  .menu img {
-    width: 35%;
-  }
-
-  .mobile-menu {
-    width: 90%;
-  }
-
-  .mobile-menu a {
-    font-size: 1.1em;
-    padding: 12px;
   }
 }
 
