@@ -126,3 +126,53 @@ function openMapsLocation() {
   const mapsUrl = `https://www.google.com/maps/dir/?api=1&destination=${latitude},${longitude}`;
   window.open(mapsUrl, '_blank');
 }
+
+// === Menú hamburguesa ===
+document.addEventListener('DOMContentLoaded', function () {
+  const hamburgerBtn = document.getElementById('hamburger-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  hamburgerBtn.addEventListener('click', function () {
+    mobileMenu.classList.toggle('open');
+  });
+
+  // Cerrar menú al hacer clic en un enlace
+  mobileMenu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenu.classList.remove('open');
+    });
+  });
+
+  // Cerrar menú al hacer clic fuera de él
+  document.addEventListener('click', function (event) {
+    if (!mobileMenu.contains(event.target) && !hamburgerBtn.contains(event.target)) {
+      mobileMenu.classList.remove('open');
+    }
+  });
+
+  // === Animaciones al hacer scroll ===
+  const animatedElements = document.querySelectorAll('.animated');
+
+  if (animatedElements.length === 0) {
+    console.warn('No se encontraron elementos con clase .animated');
+    return;
+  }
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    },
+    { 
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    }
+  );
+
+  animatedElements.forEach((el) => {
+    observer.observe(el);
+  });
+});
