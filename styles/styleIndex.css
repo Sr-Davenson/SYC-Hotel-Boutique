@@ -197,7 +197,7 @@ nav a.active {
 
 /* Menú móvil */
 .mobile-menu {
-  position: fixed;
+  position: none;
   top: 15vh;
   right: 0;
   width: 80%;
@@ -218,6 +218,7 @@ nav a.active {
 }
 
 .mobile-menu.open {
+  display: flex;
   transform: translateX(0); /* Se despliega */
 }
 
@@ -262,7 +263,7 @@ nav a.active {
   }
 
   .menu img {
-    margin-left: 11%;
+    margin-left: 13%;
     width: 30%;
     height: auto;
   }
