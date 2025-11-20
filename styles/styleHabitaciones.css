@@ -110,7 +110,7 @@ body {
   right: 0;
   width: 80%;
   max-width: 300px;
-  height: calc(100vh - 15vh);
+  height: calc(90vh - 15vh);
   background-color: #000000;
   display: none;
   flex-direction: column;
@@ -151,15 +151,15 @@ body {
 
 @media (max-width: 768px) {
   .desktop-menu {
-    display: none; /* Ocultar en móvil */
+    display: none !important; /* Ocultar en móvil */
   }
 
   .hamburger-menu {
-    display: block; /* Mostrar hamburguesa en móvil */
+    display: block !important; /* Mostrar hamburguesa en móvil */
   }
 
   .menu {
-    position: sticky; /* Cambia a fixed en móvil */
+    position: fixed; /* Cambia a fixed en móvil */
     top: 0;
     width: 100vw;
     height: 10vh;
@@ -170,7 +170,7 @@ body {
   }
 
   .menu img {
-    margin-left: 11%;
+    margin-left: 10%;
     width: 30%;
     height: auto;
   }
@@ -183,7 +183,7 @@ body {
 
 @media (max-width: 480px) {
   .menu img {
-    width: 35%;
+    width: 40%;
   }
 
   .mobile-menu {
@@ -195,6 +195,7 @@ body {
     padding: 12px;
   }
 }
+
 /* ====== Secciones principales ====== */
 main {
   padding: 30px 40px;

@@ -135,7 +135,7 @@ nav a.active {
   right: 0;
   width: 80%;
   max-width: 300px;
-  height: calc(100vh - 15vh);
+  height: calc(90vh - 15vh);
   background-color: #000000;
   display: none;
   flex-direction: column;
@@ -176,15 +176,15 @@ nav a.active {
 
 @media (max-width: 768px) {
   .desktop-menu {
-    display: none; /* Ocultar en móvil */
+    display: none !important; /* Ocultar en móvil */
   }
 
   .hamburger-menu {
-    display: block; /* Mostrar hamburguesa en móvil */
+    display: block !important; /* Mostrar hamburguesa en móvil */
   }
 
   .menu {
-    position: sticky; /* Cambia a fixed en móvil */
+    position: fixed; /* Cambia a fixed en móvil */
     top: 0;
     width: 100vw;
     height: 10vh;
@@ -195,7 +195,7 @@ nav a.active {
   }
 
   .menu img {
-    margin-left: 11%;
+    margin-left: 10%;
     width: 30%;
     height: auto;
   }
@@ -208,7 +208,7 @@ nav a.active {
 
 @media (max-width: 480px) {
   .menu img {
-    width: 35%;
+    width: 40%;
   }
 
   .mobile-menu {
@@ -221,20 +221,7 @@ nav a.active {
   }
 }
 
-@media (max-width: 480px) {
-  .menu img {
-    width: 35%;
-  }
 
-  .mobile-menu {
-    width: 90%;
-  }
-
-  .mobile-menu a {
-    font-size: 1.1em;
-    padding: 12px;
-  }
-}
 
 
 

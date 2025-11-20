@@ -127,11 +127,33 @@ function openMapsLocation() {
   window.open(mapsUrl, '_blank');
 }
 
+// === Detectar zoom y cambiar a menú móvil ===
+function detectZoom() {
+  const scale = window.devicePixelRatio || 1;
+  const hamburgerMenu = document.querySelector('.hamburger-menu');
+  const desktopMenu = document.querySelector('.desktop-menu');
+
+  if (scale >= 2) {
+    // Zoom 175% o más: activar menú móvil
+    desktopMenu.style.display = 'none';
+    hamburgerMenu.style.display = 'block';
+  } else {
+    // Zoom normal: mantener menú de escritorio
+    desktopMenu.style.display = 'flex';
+    hamburgerMenu.style.display = 'none';
+  }
+}
 
 // === Menú hamburguesa con control de display ===
 document.addEventListener('DOMContentLoaded', function () {
   const hamburgerBtn = document.getElementById('hamburger-btn');
   const mobileMenu = document.getElementById('mobile-menu');
+
+  // Detectar zoom al cargar
+  detectZoom();
+
+  // Detectar zoom al redimensionar
+  window.addEventListener('resize', detectZoom);
 
   hamburgerBtn.addEventListener('click', function () {
     // Cambia el display a flex antes de activar la clase open
