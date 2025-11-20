@@ -35,74 +35,7 @@ nav a:hover,
 nav a.active {
   color: #ffffff;
 }
-/* 
-.menu {
-  background-color: #000000;
-  width: 99vw;
-  height: 15vh;
-  display: flex;
-  align-items: center;
-  position: sticky;
-  top: 0.01%;
-  border-bottom-right-radius: 200px;
-  border-bottom-left-radius: 200px;
-  animation: animacionSuperior 1s ease-in-out;
-  z-index: 1001;
-  box-sizing: border-box;
-}
 
-.menu img {
-  margin-left: 30%;
-  width: 20%;
-  height: 10%;
-  transition-property: background-color, box-shadow;
-  transition: transform 0.3s ease-in-out, filter 0.3s ease;
-  animation: animacionSuperior 1.1s ease-in-out;
-}
-
-.menu img:hover {
-  filter: brightness(1.2) contrast(1.1);
-}
-
-.botonInicio {
-  display: flex;
-  justify-content: flex-end;
-  align-items: flex-end;
-  width: 100vh;
-  margin-right: 8%;
-}
-
-.botonInicio a {
-  height: 40px;
-  width: 20%;
-  color: #C8B273;
-  text-decoration: none;
-  padding: 5px 15px;
-  background-color: rgba(205, 165, 77, 0);
-  border: 2px solid #000000;
-  border-radius: 5px;
-  margin: 10px;
-  font-size: 120%;
-  animation: animacionSuperior 1.1s ease-in-out;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-.botonInicio a:hover {
-  background-color: #C8B273;
-  border: 2px solid #00000000;
-  color: #fff;
-  transition: all 0.3s;
-  transform: translateY(-3px);
-}
-
-.botonInicio a:active {
-  background-color: rgb(214, 205, 178);
-} */
-
-/* ====== Menú Original (con proporciones mantenidas) ====== */
 .menu {
   background-color: #000000;
   width: 99vw;
@@ -197,7 +130,7 @@ nav a.active {
 
 /* Menú móvil */
 .mobile-menu {
-  position: none;
+  position: fixed;
   top: 15vh;
   right: 0;
   width: 80%;
@@ -218,7 +151,6 @@ nav a.active {
 }
 
 .mobile-menu.open {
-  display: flex;
   transform: translateX(0); /* Se despliega */
 }
 
@@ -263,7 +195,7 @@ nav a.active {
   }
 
   .menu img {
-    margin-left: 13%;
+    margin-left: 11%;
     width: 30%;
     height: auto;
   }
@@ -271,6 +203,21 @@ nav a.active {
   .botonInicio {
     width: auto;
     margin-right: 15%;
+  }
+}
+
+@media (max-width: 480px) {
+  .menu img {
+    width: 35%;
+  }
+
+  .mobile-menu {
+    width: 90%;
+  }
+
+  .mobile-menu a {
+    font-size: 1.1em;
+    padding: 12px;
   }
 }
 

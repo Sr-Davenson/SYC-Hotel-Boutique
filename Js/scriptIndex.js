@@ -126,18 +126,31 @@ function openMapsLocation() {
   const mapsUrl = `https://www.google.com/maps/dir/?api=1&destination=${latitude},${longitude}`;
   window.open(mapsUrl, '_blank');
 }
-
 // === Detectar si es escritorio o móvil ===
-// === Menú hamburguesa con control de display ===
+function checkScreenSize() {
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  if (window.innerWidth > 768) {
+    // En escritorio: ocultar el menú móvil
+    mobileMenu.style.display = 'none';
+  } else {
+    // En móvil: mostrar el menú móvil como flex
+    mobileMenu.style.display = 'flex';
+  }
+}
+
+// === Menú hamburguesa ===
 document.addEventListener('DOMContentLoaded', function () {
   const hamburgerBtn = document.getElementById('hamburger-btn');
   const mobileMenu = document.getElementById('mobile-menu');
 
+  // Verificar tamaño de pantalla al cargar
+  checkScreenSize();
+
+  // Verificar tamaño de pantalla al redimensionar
+  window.addEventListener('resize', checkScreenSize);
+
   hamburgerBtn.addEventListener('click', function () {
-    // Cambia el display a flex antes de activar la clase open
-    mobileMenu.style.display = 'flex';
-    
-    // Añade la clase open para deslizar el menú
     mobileMenu.classList.toggle('open');
   });
 
@@ -145,11 +158,6 @@ document.addEventListener('DOMContentLoaded', function () {
   mobileMenu.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', () => {
       mobileMenu.classList.remove('open');
-      
-      // Después de un breve delay, oculta el menú
-      setTimeout(() => {
-        mobileMenu.style.display = 'none';
-      }, 400); // 400ms = duración de la animación
     });
   });
 
@@ -157,11 +165,6 @@ document.addEventListener('DOMContentLoaded', function () {
   document.addEventListener('click', function (event) {
     if (!mobileMenu.contains(event.target) && !hamburgerBtn.contains(event.target)) {
       mobileMenu.classList.remove('open');
-      
-      // Después de un breve delay, oculta el menú
-      setTimeout(() => {
-        mobileMenu.style.display = 'none';
-      }, 400);
     }
   });
 
@@ -191,5 +194,3 @@ document.addEventListener('DOMContentLoaded', function () {
     observer.observe(el);
   });
 });
-
-
