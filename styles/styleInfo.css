@@ -13,10 +13,11 @@ body {
 .menu {
   background-color: #000000;
   width: 99vw;
-  height: 15vh;
+  /* height: 15vh; */
+  height: 15%;
   display: flex;
   align-items: center;
-  position: sticky;
+  position: fixed;
   top: 0.01%;
   border-bottom-right-radius: 200px;
   border-bottom-left-radius: 200px;
