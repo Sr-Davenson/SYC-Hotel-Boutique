@@ -177,15 +177,15 @@ nav a.active {
 
 @media (max-width: 768px) {
   .desktop-menu {
-    display: none !important; /* Ocultar en móvil */
+    display: none; 
   }
 
   .hamburger-menu {
-    display: block !important; /* Mostrar hamburguesa en móvil */
+    display: block; /* Mostrar hamburguesa en móvil */
   }
 
   .menu {
-    position: fixed; /* Cambia a fixed en móvil */
+    position: sticky; /* Cambia a fixed en móvil */
     top: 0;
     width: 100vw;
     height: 10vh;
@@ -197,7 +197,7 @@ nav a.active {
 
   .menu img {
     margin-left: 10%;
-    width: 30%;
+    width: 26%;
     height: auto;
   }
 
