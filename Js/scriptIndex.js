@@ -127,10 +127,29 @@ function openMapsLocation() {
   window.open(mapsUrl, '_blank');
 }
 
+// === Detectar si es escritorio o móvil ===
+function checkScreenSize() {
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  if (window.innerWidth > 768) {
+    // En escritorio: ocultar el menú móvil
+    mobileMenu.style.display = 'none';
+  } else {
+    // En móvil: mostrar el menú móvil como flex
+    mobileMenu.style.display = 'flex';
+  }
+}
+
 // === Menú hamburguesa ===
 document.addEventListener('DOMContentLoaded', function () {
   const hamburgerBtn = document.getElementById('hamburger-btn');
   const mobileMenu = document.getElementById('mobile-menu');
+
+  // Verificar tamaño de pantalla al cargar
+  checkScreenSize();
+
+  // Verificar tamaño de pantalla al redimensionar
+  window.addEventListener('resize', checkScreenSize);
 
   hamburgerBtn.addEventListener('click', function () {
     mobileMenu.classList.toggle('open');
@@ -176,3 +195,4 @@ document.addEventListener('DOMContentLoaded', function () {
     observer.observe(el);
   });
 });
+
